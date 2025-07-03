@@ -1,0 +1,33 @@
+version: "3.8"
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: backend
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploaded_files:/app/uploaded_files
+      - ./vectorstore:/app/vectorstore
+    env_file:
+      - .env
+    restart: always
+
+  frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile.streamlit
+    container_name: frontend
+    ports:
+      - "8501:8501"
+    depends_on:
+      - backend
+    env_file:
+      - .env
+    environment:
+      - BACKEND_URL=${BACKEND_URL}
+    volumes:
+      - ./uploaded_files:/app/uploaded_files
+    restart: always
