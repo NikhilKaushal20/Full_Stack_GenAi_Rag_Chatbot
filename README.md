@@ -318,13 +318,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 4. **Vector Store Issues**
    - Clear vector store directory: `rm -rf vectorstore/*`
    - Restart services: `docker-compose restart`
-
-### Getting Help
-
-- Check the [Issues](https://github.com/NikhilKaushal20/genai-rag-chatbot/issues) page
-- Create a new issue with detailed error logs
-- Contact: [nikhilkaushal20@example.com](mailto:nikhilkaushal20@example.com)
-
 ## 🎯 Roadmap
 
 - [ ] Support for multiple document formats (DOCX, TXT)
